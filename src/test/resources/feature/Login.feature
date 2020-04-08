@@ -6,5 +6,8 @@ Feature: Login functionality tests
   Tested by - Chirag
 
   Scenario: Verify login successful with valid cred
-    Given user open website
-    When user search with keyword TV
+    Given user open the website
+    Then verify login page is displayed
+    When user login with valid cred
+    Then verify user is on homepage
+

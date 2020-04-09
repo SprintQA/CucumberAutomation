@@ -5,9 +5,17 @@ Feature: Login functionality tests
   develper - Kamil
   Tested by - Chirag
 
-  Scenario: Verify login successful with valid cred
+  Background: 
     Given user open the website
     Then verify login page is displayed
+
+  @positive @smoke @wip @kamil
+  Scenario: Verify login successful with valid cred
     When user login with valid cred
     Then verify user is on homepage
 
+  @negative @regression @chirag
+  Scenario: Verify login unsuccessful with invalid cred
+    When user login with invalid cred
+    Then verify login is unsuccessful 
+    Then verify login page is displayed

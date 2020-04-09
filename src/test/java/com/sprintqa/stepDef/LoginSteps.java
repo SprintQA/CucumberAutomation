@@ -10,24 +10,31 @@ import cucumber.api.java.en.When;
 
 public class LoginSteps extends BaseClass{
 
+	LoginPage login = new LoginPage(getWebDriver());
+	
 	@Given("^user open the website$")
 	public void user_open_the_website() throws Throwable {
-		getWebDriver().get(ConfigsReader.getProperty("url"));
+		login.openWebsite();
 	}
 
 	@Then("^verify login page is displayed$")
 	public void verify_login_page_is_displayed() throws Throwable {
-		
+		login.verifyLoginPage();
 	}
 
 	@When("^user login with valid cred$")
 	public void user_login_with_valid_cred() throws Throwable {
-		LoginPage login = new LoginPage(getWebDriver());
-		login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
+		login.doLogin(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
+	}
+	
+	@When("^user login with invalid cred$")
+	public void user_login_with_invalid_cred() throws Throwable {
+		login.doLogin("12345","12345");
 	}
 
-	@Then("^verify user is on homepage$")
-	public void verify_user_is_on_homepage() throws Throwable {
-
+	@Then("^verify login is unsuccessful$")
+	public void verify_login_is_unsuccessful() throws Throwable {
+	    login.verifyInvalidLoginErrorMessage();
 	}
+
 }

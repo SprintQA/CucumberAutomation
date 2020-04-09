@@ -1,5 +1,6 @@
 package com.sprintqa.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,4 +24,11 @@ public class HomePage extends CommonMethods{
 	public HomePage(WebDriver webDriver) {
 		PageFactory.initElements(webDriver, this);
 	}
+	
+	public void verifyHomePage() {
+		waitForElementToPresent(adminMenu);
+		Assert.assertTrue("Admin menu is not present on home page", adminMenu.isDisplayed());
+		Assert.assertTrue("pim menu is not present on home page", pimMenu.isDisplayed());
+	}
+	
 }

@@ -13,10 +13,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonMethods extends BaseClass {
-	public WebDriver webDriver;
 	
 	public void takeScreenshot(String fileName) {
 		TakesScreenshot ts = (TakesScreenshot) getWebDriver();
@@ -112,6 +113,11 @@ public class CommonMethods extends BaseClass {
 
 	public List<WebElement> getWebElementsByCssSelector(String cssSelector) {
 		return getWebElements(By.cssSelector(cssSelector));
+	}
+	
+	public void waitForElementToPresent(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getWebDriver(), 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 

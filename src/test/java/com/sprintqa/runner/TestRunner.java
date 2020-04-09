@@ -7,9 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-					features = "src\\test\\resources\\feature\\checkout.feature", 
+					features = "src\\test\\resources\\feature\\Login.feature", 
 					glue = "com.sprintqa.stepDef", 
-					monochrome = true
+					monochrome = true,
+					tags = "@chirag"
 				)
 public class TestRunner {
 

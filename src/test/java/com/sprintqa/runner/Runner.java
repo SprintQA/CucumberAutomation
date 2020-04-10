@@ -7,11 +7,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-					features = "src\\test\\resources\\feature\\Login.feature", 
+					features = "src\\test\\resources\\feature", 
 					glue = "com.sprintqa.stepDef", 
 					monochrome = true,
-					tags = "@chirag"
+					plugin = {"json:target/cucumber.json"}
 				)
-public class TestRunner {
+public class Runner {
 
 }

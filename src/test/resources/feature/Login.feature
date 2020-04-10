@@ -17,5 +17,5 @@ Feature: Login functionality tests
   @negative @regression @chirag
   Scenario: Verify login unsuccessful with invalid cred
     When user login with invalid cred
-    Then verify login is unsuccessful 
+    Then verify login is unsuccessful
     Then verify login page is displayed

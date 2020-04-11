@@ -8,13 +8,13 @@ import cucumber.api.java.Before;
 
 public class Hooks {
 	
-	@Before
+//	@Before
 	public void setUp() {
 		ConfigsReader.readProperties("src\\test\\resources\\configs\\credentials.properties");
 		BaseClass.setUp();
 	}
 	
-	@After
+//	@After
 	public void tearDown() {
 		BaseClass.tearDown();
 	}

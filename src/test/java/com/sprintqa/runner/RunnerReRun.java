@@ -7,12 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-					features = "src\\test\\resources\\feature\\DataTables.feature", 
+					features = "@rerun.txt", 
 					glue = "com.sprintqa.stepDef", 
 					monochrome = true,
-					tags="@headerDataTable",
 					plugin = {"json:target/cucumber.json"}
 				)
-public class Runner {
+
+public class RunnerReRun {
 
 }

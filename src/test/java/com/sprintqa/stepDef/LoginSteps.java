@@ -36,5 +36,11 @@ public class LoginSteps extends BaseClass{
 	public void verify_login_is_unsuccessful() throws Throwable {
 	    login.verifyInvalidLoginErrorMessage();
 	}
+	
+	@When("^user login with username \"([^\"]*)\" and password \"([^\"]*)\"$")
+	public void user_login_with_username_and_password(String usernameKey, String passwordKey) throws Throwable {
+		login.doLogin(ConfigsReader.getProperty(usernameKey), ConfigsReader.getProperty(passwordKey));
+	}
+
 
 }

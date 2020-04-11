@@ -1,6 +1,6 @@
 Feature: Login functionality tests
 
   @google
-  Scenario: Verify login successful with valid cred
+  Scenario: Google search with keyword
     Given user open the google
     And search with keyword TV

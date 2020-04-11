@@ -25,13 +25,13 @@ public class BaseClass {
 		webDriver = new ChromeDriver();
 
 		// Set our timeouts
-		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		// Set window size
 		webDriver.manage().window().maximize();
 
 		// Set our starting url based on properties file
-		webDriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		webDriver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 	}
 
 	public static void tearDown()  {

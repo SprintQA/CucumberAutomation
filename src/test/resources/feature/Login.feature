@@ -11,11 +11,11 @@ Feature: Login functionality tests
 
   @positive @smoke @wip @kamil
   Scenario: Verify login successful with valid cred
-    When user login with valid cred
+    When user login with username "valid.username" and password "valid.password"
     Then verify user is on homepage
 
   @negative @regression @chirag
   Scenario: Verify login unsuccessful with invalid cred
-    When user login with invalid cred
+    When user login with username "124543" and password "564321"
     Then verify login is unsuccessful
     Then verify login page is displayed
